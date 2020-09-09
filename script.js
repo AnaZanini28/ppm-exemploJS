@@ -51,7 +51,7 @@ console.log(texto.concat(' texto2'));
 
 window.alert('Bem vindo a calculadora em JavaScript');
 
-var opcao = parseInt(window.prompt('Digite a operação\n1-Soma\n2-Subtração\n3-Divisão\n4-Multiplicação\nOpção:'));
+var opcao = parseInt(window.prompt('Digite a operação\n1-Soma\n2-Subtração\n3-Divisão\n4-Multiplicação\n5-Potenciação\nOpção:'));
 
 var n1 = parseFloat(window.prompt('Digite o primeiro número:'));
 var n2 = parseFloat(window.prompt('Digite o segundo número:'));
@@ -71,6 +71,10 @@ switch(opcao){
     break;
     case 4:
         resultado = n1 * n2;
+        window.alert('Resultado: '+resultado);
+    break;
+    case 5:
+        resultado = Math.pow(n1,n2);
         window.alert('Resultado: '+resultado);
     break;
 
