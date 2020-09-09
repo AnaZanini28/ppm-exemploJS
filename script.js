@@ -30,7 +30,6 @@ var pi = Math.PI;
 var numeroRandomico = Math.random() *100;
 
 console.log('Numero randomico', Math.floor(numeroRandomico));
-*/
 
 var texto = 'Texto';
 
@@ -48,5 +47,35 @@ console.log(texto.charAt(0));
 console.log(texto[0]);
 console.log(texto.concat(' texto2'));
 
+*/
+
+window.alert('Bem vindo a calculadora em JavaScript');
+
+var opcao = parseInt(window.prompt('Digite a operação\n1-Soma\n2-Subtração\n3-Divisão\n4-Multiplicação\nOpção:'));
+
+var n1 = parseFloat(window.prompt('Digite o primeiro número:'));
+var n2 = parseFloat(window.prompt('Digite o segundo número:'));
+
+switch(opcao){
+    case 1:
+        resultado = n1 + n2;
+        window.alert('Resultado: '+resultado);
+    break;
+    case 2:
+        resultado = n1 - n2;
+        window.alert('Resultado: '+resultado);
+    break;
+    case 3:
+        resultado = n1 / n2;
+        window.alert('Resultado: '+resultado);
+    break;
+    case 4:
+        resultado = n1 * n2;
+        window.alert('Resultado: '+resultado);
+    break;
+
+    default:
+        window.alert('Opção inválida!');
+}
 
 
