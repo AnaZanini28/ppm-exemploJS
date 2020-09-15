@@ -49,37 +49,50 @@ console.log(texto.concat(' texto2'));
 
 */
 
+
 window.alert('Bem vindo a calculadora em JavaScript');
 
-var opcao = parseInt(window.prompt('Digite a operação\n1-Soma\n2-Subtração\n3-Divisão\n4-Multiplicação\n5-Potenciação\nOpção:'));
+var continuar;
 
-var n1 = parseFloat(window.prompt('Digite o primeiro número:'));
-var n2 = parseFloat(window.prompt('Digite o segundo número:'));
+do{
+var opcao = parseInt((window.prompt('Digite a operação\n1-Soma\n2-Subtração\n3-Divisão\n4-Multiplicação\n5-Potenciação\n0-Sair\nOpção:')));
 
-switch(opcao){
-    case 1:
-        resultado = n1 + n2;
-        window.alert('Resultado: '+resultado);
-    break;
-    case 2:
-        resultado = n1 - n2;
-        window.alert('Resultado: '+resultado);
-    break;
-    case 3:
-        resultado = n1 / n2;
-        window.alert('Resultado: '+resultado);
-    break;
-    case 4:
-        resultado = n1 * n2;
-        window.alert('Resultado: '+resultado);
-    break;
-    case 5:
-        resultado = Math.pow(n1,n2);
-        window.alert('Resultado: '+resultado);
-    break;
+if( opcao === 0 ){
+    continuar = false;
+}else if (opcao >= 1 && opcao <=5){
 
-    default:
-        window.alert('Opção inválida!');
-}
+        var n1 = parseFloat(window.prompt('Digite o primeiro número:'));
+        var n2 = parseFloat(window.prompt('Digite o segundo número:'));
+        var resultado;
+    switch(opcao){
+        case 1:
+            resultado = n1 + n2;
+        break;
+        case 2:
+            resultado = n1 - n2;
+        break;
+        case 3:
+            resultado = n1 / n2;
+        break;
+        case 4:
+            resultado = n1 * n2;
+        break;
+        case 5:
+            resultado = Math.pow(n1,n2);
+        break;
+       }
 
+       if(resultado !== undefined) {
+           window.alert('Resultado: '+resultado);
+       }
+       continuar = confirm('Deseja continuar?');
+    
+     } else{
+           alert('Opção inválida');
+           continuar = true;
+    }
+ 
+}while(continuar);
+
+alert('Fechando ...');
 
